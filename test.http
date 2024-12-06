@@ -1,0 +1,64 @@
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+
+{
+    "name":"Créé une entreprise",
+    "description":"pour pouvoir créer une entreprise"
+}
+
+###
+GET http://localhost:3000/api/projects
+
+###
+GET http://localhost:3000/api/projects/6752fc3a315aa01c50312bee
+
+###
+PUT http://localhost:3000/api/projects/6752fc3a315aa01c50312bee
+Content-Type: application/json
+
+{
+    "name":"Créer une API",
+    "description":"Creation d'une API",
+    "status":"in-progress"
+}
+
+###
+DELETE http://localhost:3000/api/projects/6752fc3a315aa01c50312bee
+
+###
+POST http://localhost:3000/api/projects/6752d21017986f1c30a40bc2/complete
+
+###
+GET  http://localhost:3000/api/projects/by-status?status=planned
+
+###
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+    "projectId":"6752fc3a315aa01c50312bee",
+    "title":"Commencer le projet"
+}
+
+###
+GET http://localhost:3000/api/tasks
+
+###
+GET http://localhost:3000/api/tasks/675300fc566c978106ae2099
+
+###
+PUT http://localhost:3000/api/tasks/675307bc0ada35f4917bde65
+Content-Type: application/json
+
+{
+    "title":"Commencer a faire un plan"
+}
+
+###
+DELETE http://localhost:3000/api/tasks/675306c093cf20a806b0bb6b
+
+###
+POST http://localhost:3000/api/tasks/675307bc0ada35f4917bde65/mark-done
+
+###
+GET http://localhost:3000/api/tasks/due-before?date=2025-01-01
